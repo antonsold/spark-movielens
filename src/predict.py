@@ -18,6 +18,7 @@ def main():
         config["models"]["normalizer_path"],
         config["models"]["brp_path"]
     )
+
     if not success:
         model.log.error("Error loading models. No predictions will be generated.")
         spark.stop()

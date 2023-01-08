@@ -22,4 +22,5 @@ def load_raw_data(spark: SparkSession, path: str) -> DataFrame:
 
 
 def get_users_to_predict(data: DataFrame, n: int, random_seed: int):
-    return data.orderBy(F.rand(random_seed)).limit(n).select("user_id")
+    fraction = n / data.count()
+    return data.sample(fraction, random_seed).select("user_id")
