@@ -1,13 +1,9 @@
 import traceback
 from typing import List, Optional
 
-from pyspark.ml.feature import (
-    IDF, IDFModel,
-    BucketedRandomProjectionLSH,
-    BucketedRandomProjectionLSHModel,
-    HashingTF,
-    Normalizer,
-)
+from pyspark.ml.feature import (IDF, BucketedRandomProjectionLSH,
+                                BucketedRandomProjectionLSHModel, HashingTF,
+                                IDFModel, Normalizer)
 from pyspark.sql import Window
 from pyspark.sql import functions as F
 from pyspark.sql.dataframe import DataFrame
